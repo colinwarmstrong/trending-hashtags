@@ -1,7 +1,7 @@
 import express from 'express'
-import {createClient} from "redis"
+import {createClient} from 'redis'
 import {Queue, Worker} from 'bullmq'
-import {config} from "./config.js"
+import {config} from './config.js'
 
 /* Initialize Express server */
 const app = express()
@@ -25,7 +25,7 @@ const jobQueue = new Queue('jobQueue', config.jobQueueConfig)
 const worker = new Worker('jobQueue', job => processTweetFromJobQueue(job), config.workerConfig)
 
 worker.on('completed', job => console.log('BullMQ job completed:', job.id))
-worker.on('failed', job => console.warn('BullMQ job failed:', job))
+worker.on('failed', job => console.warn('BullMQ job failed:', job.id))
 worker.on('error', err => console.error('BullMQ worker error:', err))
 
 console.log(`BullMQ job queue configured and connected to ${config.redis.url}`)

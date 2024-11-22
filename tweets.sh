@@ -51,8 +51,8 @@ curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "t
 curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "16-20 hashtags! #gettinDownThere #betterBeCareful #barelyTrending #nervous #lookOut"}'; echo;
 
 # Hashtags 21-25, tweeted 2 times each
-curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "21-25 hashtags! #trash #lame # #meh #bummer #sigh"}'; echo;
-curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "21-25 hashtags! #trash #lame # #meh #bummer #sigh"}'; echo;
+curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "21-25 hashtags! #trash #lame #meh #bummer #sigh"}'; echo;
+curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "21-25 hashtags! #trash #lame #meh #bummer #sigh"}'; echo;
 
 # Hashtags 26-30, tweeted 1 time each
 curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "26-30 hashtags! #notEvenTrending #sad #onlyTweetedOnce #underdog #maybeNextYear"}'; echo;
