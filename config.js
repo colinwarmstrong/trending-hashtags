@@ -1,4 +1,4 @@
-const env = process.env;
+const env = process.env
 
 const redisConnection = {
     url: env.REDIS_URL || "localhost:6379",

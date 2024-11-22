@@ -1,7 +1,7 @@
 import express from 'express'
 import {createClient} from "redis"
 import {Queue, Worker} from 'bullmq'
-import {config} from "./config.js";
+import {config} from "./config.js"
 
 /* Initialize Express server */
 const app = express()
@@ -15,7 +15,7 @@ const HASHTAG_FREQUENCIES_KEY = 'hashtag_frequencies'
 const redisClient = createClient({
     url: config.redis.url,
     password: config.redis.password
-});
+})
 redisClient.on('error', err => console.error('Redis client error:', err))
 await redisClient.connect()
 console.log(`Redis client configured and connected to ${config.redis.url}`)
