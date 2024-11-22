@@ -2,7 +2,7 @@
 
 An application for processing and serving trending hashtag data using Express, Redis, and BullMQ
 
-[GitHub Repo](http://localhost)
+[GitHub Repo](https://github.com/colinwarmstrong/trending-hashtags)
 
 ## Getting Started
 
@@ -18,13 +18,19 @@ into it!
 ### How to Run the Application
 
 1. Open a terminal session 
-2. Run `git clone <url_here>` to download the project to your local machine
-3. Run `cd <repo_name>` to change into the project directory
+2. Run `git clone https://github.com/colinwarmstrong/trending-hashtags.git` to download the project to your local machine
+3. Run `cd trending-hashtags` to change into the project directory
 3. Run `docker compose up -d` from the project directory to spin up two Docker containers in the background:
     - A Redis data store at `localhost:6379`
     - An Express web server at `localhost:8080`
 5. Wait for `docker compose up -d` to complete (this took roughly 30 seconds on my machine) 
 and you're good to go!
+6. Handy one-liner if you're so inclined:
+```shell
+   git clone https://github.com/colinwarmstrong/trending-hashtags.git &&
+   cd trending-hashtags &&
+   docker compose up -d
+```
 
 ### How to Test the Application
 - Quick tip: the comments in the `tweets.sh` shell script should provide some clarity on what the script is doing
@@ -88,7 +94,7 @@ also allows us to quickly scale out any of these components horizontally using t
 This application should remain performant even with high levels of traffic assuming we're able to scale up properly. The 
 Express endpoints themselves are doing very little actual work so should continue to return quickly. Redis is a very 
 fast data store and the use of its sorted set data type provides a very efficient way to maintain a ranking of our
-trending tweets. We're also caching unique tweets and their associated hashtags to avoid processing duplicate tweets.
+trending hashtags. We're also caching unique tweets and their associated hashtags to avoid processing duplicate tweets.
 BullMQ allows us to offload data processing to background jobs so the rest of the application can remain responsive.
 
 ### Areas for Improvement
