@@ -1,0 +1,47 @@
+services:
+
+  redis:
+    image: redis/redis-stack:latest
+    restart: always
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+    environment:
+      REDIS_ARGS:
+        --requirepass super-secret-password-123
+        --save 10 1
+        --appendonly yes
+        --appendfsync everysec
+    healthcheck:
+      test: [ "CMD", "redis-cli", "PING | grep PONG" ]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - redis_data:/data
+    networks:
+      - hashtag_network
+
+  express:
+    restart: always
+    depends_on:
+      redis:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      EXPRESS_PORT: 8080
+      REDIS_URL: redis://redis:6379
+      REDIS_PASSWORD: super-secret-password-123
+      WORKER_CONCURRENCY: 50
+    networks:
+      - hashtag_network
+
+volumes:
+  redis_data:
+
+networks:
+  hashtag_network:

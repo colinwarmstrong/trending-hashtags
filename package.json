@@ -1,0 +1,14 @@
+{
+  "name": "hashtag-service",
+  "version": "1.0.0",
+  "description": "Express API serving trending hashtag data",
+  "main": "app.js",
+  "type": "module",
+  "author": "Colin Armstrong",
+  "license": "ISC",
+  "dependencies": {
+    "bullmq": "^5.28.1",
+    "express": "^5.0.1",
+    "redis": "^4.7.0"
+  }
+}
