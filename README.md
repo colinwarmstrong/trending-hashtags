@@ -20,7 +20,7 @@ into it!
 1. Open a terminal session 
 2. Run `git clone https://github.com/colinwarmstrong/trending-hashtags.git` to download the project to your local machine
 3. Run `cd trending-hashtags` to change into the project directory
-3. Run `docker compose up -d` from the project directory to spin up two Docker containers in the background:
+4. Run `docker compose up -d` from the project directory to spin up two Docker containers in the background:
     - A Redis data store at `localhost:6379`
     - An Express web server at `localhost:8080`
 5. Wait for `docker compose up -d` to complete (this took roughly 30 seconds on my machine) 
