@@ -22,7 +22,7 @@ Feel free to use any framework Node.js (our preference) or Python/Java framework
 
 ```json
 {
-    "tweet": "<tweet>"
+  "tweet": "<tweet>"
 }
 ```
 
@@ -57,8 +57,8 @@ Feel free to use any framework Node.js (our preference) or Python/Java framework
 - [x] Bonus points also if the system supported a very large cardinality of the hashtags, where the naive
   calculation of all the top hashtags at request-time would not be quick enough.
 
-- [x] The deliverable should contain very simple instructions on how to run the application. Instructions on how to run a
-  test to verify the results is also acceptable.
+- [x] The deliverable should contain very simple instructions on how to run the application. Instructions on how
+  to run a test to verify the results is also acceptable.
 
 ### Assignment Review Details
 
