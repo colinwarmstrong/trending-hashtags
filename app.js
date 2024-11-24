@@ -11,5 +11,5 @@ await Redis.initializeClient(config)
 await BullMQ.initializeJobQueue(config)
 console.log('Trending hashtag service successfully started!\n')
 
-/* Use the endpoints defined in the router */
+/* Use the routers defined in route files */
 Express.app.use(tweetRouter)
