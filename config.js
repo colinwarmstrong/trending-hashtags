@@ -1,8 +1,8 @@
 const env = process.env
 
 const redisConnection = {
-    url: env.REDIS_URL || "localhost:6379",
-    password: env.REDIS_PASSWORD || ""
+    url: env.REDIS_URL || "redis://localhost:6379",
+    password: env.REDIS_PASSWORD || "super-secret-password-123"
 }
 
 export const config = {
