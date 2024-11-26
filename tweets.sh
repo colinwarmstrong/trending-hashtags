@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute provided curl requests
-echo "--------------------PROVIDED CURL REQUESTS--------------------"
+echo "--------------------PROVIDED CURL REQUESTS--------------------";
 curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "Today is the 30 year anniversary of UNLV winning the national championship. Vegas was still a small town back then and as a kid growing up there nothing was bigger than the Runnin'\'' Rebels. Still think this is the best college basketball team ever. #UNLV #Baskeball" }'; echo;
 curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "Vanessa Bryant on Kobe Bryant being inducted into the Basketball Hall of Fame today. We wish that he was here with us to celebrate but it'\''s definitely the peak of his NBA career. #basketball #kobe #mamba" }'; echo;
 curl "localhost:8080/tweet" -X POST -H 'Content-Type: application/json' -d '{ "tweet": "Vanessa Bryant on Kobe Bryant being inducted into the Basketball Hall of Fame today. We wish that he was here with us to celebrate but it'\''s definitely the peak of his NBA career. #basketball #kobe #mamba" }'; echo;
