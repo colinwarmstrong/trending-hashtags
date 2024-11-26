@@ -53,7 +53,7 @@ into it!
 - Send a curl request to the `GET /trending-hashtags` endpoint:
 
 ```shell
-  curl -i 'localhost:8080/trending-hashtags'
+  curl 'localhost:8080/trending-hashtags' -i
 ```
 
 ### How to Stop the Application
